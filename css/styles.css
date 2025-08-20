@@ -235,7 +235,7 @@ a.custom-card:hover {
 
 .input-row {
   display: flex;                 
-  margin-bottom: 15px;
+ 
   margin-top: 15px;
 }
 
@@ -273,4 +273,13 @@ a.custom-card:hover {
   margin-left: 46px;
 }
 
-
+.registro {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.registro a {
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff9900 !important;
+}
