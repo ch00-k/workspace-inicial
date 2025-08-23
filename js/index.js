@@ -1,7 +1,8 @@
-function logincheck() {
+document.addEventListener("DOMContentLoaded", function(){
+  function logincheck() {
   const usuario = localStorage.getItem("usuario");
   const password = localStorage.getItem("password");
-  var currentPage = window.location.pathname.split("/").pop(); 
+  const currentPage = window.location.pathname.split("/").pop(); 
 
   if (usuario && password) {
     if (currentPage === "login.html") {
