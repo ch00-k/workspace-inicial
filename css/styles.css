@@ -189,6 +189,103 @@ a.custom-card:hover {
   color: orange;
 }
 
+<<<<<<< main
+=======
+.login-box  {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 485px;
+  height: 376px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  opacity: 0.48;
+  background: #eeeeee !important;
+  opacity: 1 !important; 
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+}
+
+.login-text {
+  margin-top: 30px;
+  font-size: 32px;
+  text-align: center;
+  color: #000000 ;
+  font-weight: bold;
+}
+
+
+
+.boton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 3cap;
+  width: 176px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #ff9900;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-width: 0cap;
+  color: #FFFFFF;
+  
+}
+
+
+
+.input-row {
+  display: flex;                 
+ 
+  margin-top: 15px;
+}
+
+.usuario-icon {
+  width: 38px;
+  height: 34px;
+  flex-shrink: 0;
+  aspect-ratio: 19/17;
+  margin-left: -70px;
+  margin-top: 5px;
+}
+
+.contrasena-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  margin-left: -75px;
+} 
+
+.login-parametros {
+  margin-right: auto;
+  width: 323px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
+  border-width: 0cap;
+  margin-left: 50px;
+  padding-left: 10px;
+}
+
+.login-parametros#password {
+  margin-left: 46px;
+}
+
+.registro {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.registro a {
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff9900 !important;
+}
+>>>>>>> christian
 
 .navbar {
   background: linear-gradient(90deg, #0f1115, #1b1e25);
