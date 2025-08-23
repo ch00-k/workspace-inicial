@@ -189,8 +189,7 @@ a.custom-card:hover {
   color: orange;
 }
 
-<<<<<<< main
-=======
+
 .login-box  {
   justify-content: center;
   display: flex;
@@ -285,7 +284,7 @@ a.custom-card:hover {
   cursor: pointer;
   color: #ff9900 !important;
 }
->>>>>>> christian
+
 
 .navbar {
   background: linear-gradient(90deg, #0f1115, #1b1e25);
