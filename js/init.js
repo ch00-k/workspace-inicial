@@ -39,3 +39,4 @@ let getJSONData = function(url){
         return result;
     });
 }
+ document.getElementById("miEnlace").textContent = localStorage.getItem("usuario");
