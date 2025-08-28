@@ -605,3 +605,57 @@ hr.mb-4 {
   border-top: 1px solid rgba(0,0,0,.08);
 }
 
+
+@media (max-width: 599px) {
+  .login-box {
+    width: 95% !important;
+    height: auto;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .login-text {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .input-row {
+  
+    align-items: flex-start;
+  }
+
+  .usuario-icon{
+    margin: 0 0 6px 4px !important;
+
+  }
+
+  .contrasena-icon {
+    margin: 0 0 6px 0px !important;
+ 
+  }
+
+
+  .login-parametros {
+    width: 75% !important;
+    margin: 0 !important;
+    font-size: 0.95rem;
+    height: 40px;
+  }
+  .login-parametros#password {
+    margin-left: 14px !important;
+  }
+  .login-parametros#usuario {
+    margin-left: 20px !important;
+  }
+
+  .boton {
+    width: 75% !important;
+    height: 42px;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .registro {
+    font-size: 0.85rem;
+  }
+}
