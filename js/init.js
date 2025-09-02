@@ -15,6 +15,22 @@ let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
+function logincheck() {
+  const usuario = localStorage.getItem("usuario");
+  const password = localStorage.getItem("password");
+  var currentPage = window.location.pathname.split("/").pop(); 
+
+  if (usuario && password) {
+    if (currentPage === "login.html") {
+      window.location.href = "index.html";
+    }
+  } else {
+    if (currentPage !== "login.html") {
+      window.location.href = "login.html";
+    }
+  }
+}
+
 let getJSONData = function(url){
     let result = {};
     showSpinner();
@@ -40,3 +56,7 @@ let getJSONData = function(url){
     });
 }
  document.getElementById("miEnlace").textContent = localStorage.getItem("usuario");
+
+ document.addEventListener("DOMContentLoaded", function(){
+logincheck();
+});
