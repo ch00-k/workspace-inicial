@@ -1,15 +1,58 @@
-const URL = PRODUCTS_URL+"/101.json";
+const URL = PRODUCTS_URL+localStorage.getItem("catID")+".json";
+const ORDER_ASC_BY_PRICE = "AZ";
+const ORDER_DESC_BY_PRICE = "ZA";
+const ORDER_BY_RELEVANCE = "Rel.";
+let currentProductsArray = [];
+let currentSortCriteria = undefined;
+
+function sortProducts(criteria, array) {
+  let result = [];
+  if (criteria === ORDER_ASC_BY_PRICE) {
+    result = array.sort((a, b) => a.cost - b.cost);
+  } else if (criteria === ORDER_DESC_BY_PRICE) {
+    result = array.sort((a, b) => b.cost - a.cost);
+  } else if (criteria === ORDER_BY_RELEVANCE) {
+    result = array.sort((a, b) => b.soldCount - a.soldCount);
+  }
+  return result;
+}
+
+function sortAndShowProducts(sortCriteria, productsArray) {
+  currentSortCriteria = sortCriteria;
+
+  if (productsArray != undefined) {
+    currentProductsArray = productsArray;
+  }
+
+  currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
+
+  mostrarProductos(currentProductsArray);
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch(URL)
     .then(response => response.json())
     .then(data => {
-      const products = data.products;
+      currentProductsArray = data.products;
       setCategoryTitle(data.catName);
-      mostrarProductos(products);
+      mostrarProductos(currentProductsArray);
     })
     .catch(error => console.error("Error al cargar los productos:", error));
+
+  document.getElementById("sortAscP").addEventListener("change", () => {
+  sortAndShowProducts(ORDER_ASC_BY_PRICE);
+  });
+  document.getElementById("sortDescP").addEventListener("change", () => {
+  sortAndShowProducts(ORDER_DESC_BY_PRICE);
+  });
+  document.getElementById("sortByRel").addEventListener("change", () => {
+  sortAndShowProducts(ORDER_BY_RELEVANCE);
+  });
+
 });
+
 
 function setCategoryTitle(catName) {
   const titleElement = document.getElementById("category-title");
@@ -45,3 +88,5 @@ function mostrarProductos(products) {
     container.appendChild(productCard);
   });
 }
+
+

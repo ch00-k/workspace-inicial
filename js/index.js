@@ -1,7 +1,3 @@
-
-
-
-
 document.addEventListener("DOMContentLoaded", function(){
 
     document.getElementById("autos").addEventListener("click", function() {
