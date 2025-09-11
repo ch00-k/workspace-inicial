@@ -1,4 +1,4 @@
-const URL = PRODUCTS_URL + localStorage.getItem("catID") + ".json";
+const URL = PRODUCTS_URL + localStorage.getItem("catID") + EXT_TYPE;
 const ORDER_ASC_BY_PRICE = "AZ";
 const ORDER_DESC_BY_PRICE = "ZA";
 const ORDER_BY_RELEVANCE = "Rel.";
