@@ -660,3 +660,16 @@ hr.mb-4 {
   }
 }
 
+.badge{
+    background: #ff9900 !important; 
+    color: white;
+    font-weight: 500;
+  }
+
+.thumbnails-small {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}

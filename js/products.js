@@ -82,6 +82,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mostrarProductos(currentProductsArray);
   });
+
+   document.getElementById("searchProducts").addEventListener("input", function () {
+    const searchText = this.value.toLowerCase();
+    const filtered = currentProductsArray.filter(product =>
+      product.name.toLowerCase().includes(searchText) ||
+      product.description.toLowerCase().includes(searchText)
+    );
+    mostrarProductos(filtered);
+  });
 });
 
 function setCategoryTitle(catName) {
