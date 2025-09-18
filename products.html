@@ -31,18 +31,83 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <a id="miEnlace" class="nav-link active" href="#"></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main class="pb-5 container">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <h1 id="category-title" class="my-4"></h1>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-12 mb-3 d-lg-none">
+        <button class="btn btn-outline-secondary w-100" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#filtersCollapse" 
+                aria-expanded="false" 
+                aria-controls="filtersCollapse">
+          Filtros
+        </button>
+      </div>
+
+      
+      <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+        <div class="collapse d-lg-block" id="filtersCollapse">
+        <div class="d-flex justify-content-end">
+      <div class="btn-group mb-4" role="group" aria-label="Orden">
+        <input type="radio" class="btn-check" name="order" id="sortAscP" autocomplete="off">
+        <label class="btn btn-light" for="sortAscP" title="Precio ascendente">
+          <i class="fas fa-sort-amount-up"></i><i class="fas fa-dollar-sign"></i>
+        </label>
+        <input type="radio" class="btn-check" name="order" id="sortDescP" autocomplete="off">
+        <label class="btn btn-light" for="sortDescP" title="Precio descendente">
+          <i class="fas fa-sort-amount-down"></i><i class="fas fa-dollar-sign"></i>
+        </label>
+        <input type="radio" class="btn-check" name="order" id="sortByRel" autocomplete="off" checked>
+        <label class="btn btn-light" for="sortByRel" title="Relevancia">
+          <i class="fas fa-sort-amount-down"></i>Rel
+        </label>
+      </div>
+        </div>
+
+          <div class="row container p-0 m-0">
+            <div class="col-4">
+              <input type="search" class="form-control" id="searchProducts" placeholder="Buscar...">
+            </div>
+            <div class="col">
+              <p class="font-weight-normal text-end my-2">Precio.</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterValueMinProducts">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterValueMaxProducts">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="valueFilterCountProducts">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearValueFilterProducts">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col text-end">
+        
+
+        <div id="products-container"></div>
       </div>
     </div>
-  </main>
+  </div>
+</main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
