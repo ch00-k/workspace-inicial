@@ -36,7 +36,7 @@ function mostrarProducto(product) {
     const thumb = document.createElement("img");
     thumb.src = img;
     thumb.alt = `${product.name} - imagen ${index + 1}`;
-    thumb.classList.add("img-thumbnail", "mb-2", "d-block");
+    thumb.classList.add("img-thumbnail", "mb-2", "d-block", "thumbnails-small");
     thumb.style.cursor = "pointer";
 
     // cambiar imagen principal al hacer click
