@@ -673,3 +673,36 @@ hr.mb-4 {
   max-height: 150px;
   overflow-y: auto;
 }
+
+a.rating {
+    direction: rtl; /* Invierte el orden de las estrellas */
+    display: flex;
+    flex-direction: row-reverse; /* Coloca las estrellas en orden inverso */
+    font-size: 3em; /* Tamaño de las estrellas */
+    margin: 20px 0;
+}
+
+.label-rating {
+    cursor: pointer;
+    color: #ddd; /* Color por defecto de las estrellas */
+}
+
+.rating input[type="radio"] {
+    display: none; /* Oculta los inputs de radio */
+}
+
+.rating input[type="radio"]:checked ~ .label-rating,
+.rating label.label-rating:hover,
+.rating label.label-rating:hover ~ .label-rating {
+    color: #FFD700; /* Color dorado para las estrellas seleccionadas o en hover */
+}
+
+/* Estilo adicional para el botón (opcional) */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
