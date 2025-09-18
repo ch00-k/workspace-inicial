@@ -675,9 +675,9 @@ hr.mb-4 {
 }
 
 a.rating {
-    direction: rtl; /* Invierte el orden de las estrellas */
+    direction: rtl; /* orden de las estrellas */
     display: flex;
-    flex-direction: row-reverse; /* Coloca las estrellas en orden inverso */
+    flex-direction: row-reverse; /* Coloca las estrellas en orden  */
     font-size: 3em; /* Tamaño de las estrellas */
     margin: 20px 0;
 }
