@@ -31,16 +31,54 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+           <a id="miEnlace" class="nav-link active" href="#"></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+ <main class="container my-5">
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <h2 id="product-name"></h2>
       </div>
+      <div class="col-md-4 text-md-end">
+        <span class="badge bg-primary" id="product-category"></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Imagen principal -->
+      <div class="col-md-8">
+        <img id="main-image" src="" alt="Imagen del producto" class="img-fluid rounded shadow-sm">
+      </div>
+
+      <!-- Miniaturas -->
+      <div class="col-md-4" id="thumbnails-container">
+        <!-- El JS insertará aquí las miniaturas -->
+      </div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="mt-4">
+      <h4>Descripción</h4>
+      <p id="product-description"></p>
+    </div>
+
+    <!-- Precio y vendidos -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h5>Precio: <span id="product-price"></span></h5>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <h6>Cant. vendidos: <span id="product-soldcount"></span></h6>
+      </div>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="mt-4">
+      <button class="btn btn-success me-2">Comprar</button>
+      <a href="products.html" class="btn btn-secondary">Volver a productos</a>
     </div>
   </main>
   <footer class="text-muted">
