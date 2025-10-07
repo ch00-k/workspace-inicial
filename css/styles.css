@@ -352,23 +352,7 @@ footer a:hover {
 }
 
 /* Ajuste al login para más presencia */
-.login-box {
-  border-radius: 24px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.15);
-  background: #fff !important;
-  opacity: 1 !important;
-}
-.login-text {
-  font-size: 28px;
-  font-weight: 700;
-  color: #333;
-}
-.boton {
-  background: linear-gradient(90deg, #ff9900, #ff7b00);
-  font-weight: 600;
-  letter-spacing: .5px;
-  transition: transform .2s ease;
-}
+
 .boton:hover {
   transform: translateY(-2px);
 }
