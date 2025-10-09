@@ -352,23 +352,7 @@ footer a:hover {
 }
 
 /* Ajuste al login para más presencia */
-.login-box {
-  border-radius: 24px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.15);
-  background: #fff !important;
-  opacity: 1 !important;
-}
-.login-text {
-  font-size: 28px;
-  font-weight: 700;
-  color: #333;
-}
-.boton {
-  background: linear-gradient(90deg, #ff9900, #ff7b00);
-  font-weight: 600;
-  letter-spacing: .5px;
-  transition: transform .2s ease;
-}
+
 .boton:hover {
   transform: translateY(-2px);
 }
@@ -611,21 +595,19 @@ hr.mb-4 {
     width: 95% !important;
     height: auto;
     padding: 1.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 25px;
   }
 
   .login-text {
-    font-size: 24px;
     margin-top: 10px;
   }
 
   .input-row {
-  
     align-items: flex-start;
   }
 
   .usuario-icon{
-    margin: 0 0 6px 4px !important;
+    margin: 0 0 6px 5px !important;
 
   }
 
@@ -645,7 +627,7 @@ hr.mb-4 {
     margin-left: 14px !important;
   }
   .login-parametros#usuario {
-    margin-left: 20px !important;
+    margin-left: 19px !important;
   }
 
   .boton {
@@ -660,3 +642,144 @@ hr.mb-4 {
   }
 }
 
+.badge{
+    background: #ff9900 !important; 
+    color: white;
+    font-weight: 500;
+  }
+
+.thumbnails-small {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#star-rating .star {
+  transition: transform 0.2s;
+  margin-right: 4px;
+  color: #ff9900;
+}
+
+#star-rating .star:hover {
+  transform: scale(1.2);
+  color: #ff9900;
+}
+
+/* Estrellas de comentarios */
+.filled-star {
+  color: #ff9900;
+}
+
+.empty-star {
+  color: #ccc;
+}
+
+/* Estrellas interactivas del formulario */
+#star-rating .interactive-star {
+  font-size: 2rem;
+  margin-right: 5px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+#star-rating .interactive-star:hover {
+  transform: scale(1.2);
+}
+
+/* Caja de comentario */
+#comments-container .border {
+  background-color: #fff;
+  position: relative;
+}
+
+#comments-container .stars-container {
+  font-size: 1.2rem;
+}
+
+#comments-container .text-muted.small {
+  font-size: 0.8rem;
+}
+
+/* Estrellas interactivas del formulario */
+#star-rating .interactive-star {
+  font-size: 2rem;
+  margin-right: 5px;
+  transition: transform 0.2s, color 0.2s;
+  color: #ccc; /* color inicial gris */
+  cursor: pointer;
+}
+
+#star-rating .interactive-star:hover {
+  transform: scale(1.2);
+  color: #ff9900; /* color en hover */
+}
+
+/* Botón enviar reseña */
+#btnEnviarComentario {
+  background-color: #ff9900;
+  border: none;
+  color: white;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#btnEnviarComentario:hover {
+  background-color: #e68a00; /* tono más oscuro */
+  transform: scale(1.05);
+}
+
+#btnEnviarComentario:active {
+  background-color: #cc7a00;
+  transform: scale(1);
+}
+
+/* Contenedor de miniaturas */
+#thumbnails-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch; /* hacer que las miniaturas llenen el ancho de la columna */
+}
+
+/* Miniaturas ajustadas a la altura de la imagen principal */
+#thumbnails-container img {
+  width: 50%;          
+  height: auto;         
+  max-height: 150px;     
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+#thumbnails-container img:hover {
+  transform: scale(1.05);
+  border-color: #ff9900;
+}
+
+/* Miniatura seleccionada activa */
+#thumbnails-container img.active {
+  border-color: #ff9900;
+}
+
+/* Responsivo: en pantallas pequeñas */
+@media (max-width: 768px) {
+  .row > .col-md-8,
+  .row > .col-md-4 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #thumbnails-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  #thumbnails-container img {
+    width: auto;
+    height: 80px;
+  }
+}
