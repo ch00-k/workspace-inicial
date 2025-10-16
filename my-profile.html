@@ -46,17 +46,46 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <a id="miEnlace" class="nav-link" href="my-profile.html"></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+  <main class="container my-5">
+    <div class="profile-card mx-auto p-4 shadow-sm">
+      <div class="text-center mb-3">
+        <div class="profile-pic mx-auto mb-3">
+          <img id="profilePic" src="img/img_perfil.png" alt="Foto de perfil" class="img-fluid rounded-circle">
+        </div>
+        <button id="btnSubirFoto" class="btn btn-warning text-white fw-semibold px-4" type="button">Subir Foto</button>
+        <div id="eliminarFoto">Eliminar Foto</div>
+        <input type="file" id="inputFile" accept="image/*" class="d-none">
       </div>
+
+
+      <!-- Formulario -->
+      <form class="row g-3 mt-4">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label fw-semibold">Nombre:</label>
+          <input type="text" id="nombre" class="form-control" placeholder="Escribe aquí...">
+        </div>
+        <div class="col-md-6">
+          <label for="apellido" class="form-label fw-semibold">Apellido:</label>
+          <input type="text" id="apellido" class="form-control" placeholder="Escribe aquí...">
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label fw-semibold">Email:</label>
+          <input type="email" id="email" class="form-control" placeholder="Escribe aquí...">
+        </div>
+        <div class="col-md-6">
+          <label for="telefono" class="form-label fw-semibold">Teléfono:</label>
+          <input type="text" id="telefono" class="form-control" placeholder="Escribe aquí...">
+        </div>
+        <div class="text-center mt-4">
+          <button id="btnEditarGuardar" type="button" class="btn btn-warning text-white fw-semibold px-5">Editar</button>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">
