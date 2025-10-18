@@ -111,10 +111,10 @@ function mostrarProductos(products) {
       const productCard = document.createElement("div");
       productCard.classList.add("card", "mb-3");
       productCard.innerHTML = `
-        <a href="product-info.html?id=${id}" class="text-decoration-none text-dark">
+        <a href="product-info.html?id=${id}" class="text-decoration-none product-link">
           <div class="row g-0">
             <div class="col-md-4 p-3">
-                <img src="${image}" class="img-fluid rounded-start" alt="${name}">
+              <img src="${image}" class="img-fluid rounded-start" alt="${name}">
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-between p-3">
               <div>
@@ -123,12 +123,13 @@ function mostrarProductos(products) {
               </div>
               <div>
                 <p class="card-text"><strong>Precio:</strong> ${currency} ${cost}</p>
-                <p class="card-text"><small class="text-muted">Cant. vendidos: ${soldCount}</small></p>
+                <p class="card-text"><small class="sold-count">Cant. vendidos: ${soldCount}</small></p>
               </div>
             </div>
           </div>
         </a>
       `;
+
       container.appendChild(productCard);
     }
   });
