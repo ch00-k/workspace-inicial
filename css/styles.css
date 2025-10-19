@@ -199,7 +199,7 @@ a.custom-card:hover {
   flex-shrink: 0;
   border-radius: 50px;
   opacity: 0.48;
-  background: #eeeeee !important;
+  background: #D9D9D9 !important;
   opacity: 1 !important; 
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin: 0 auto;
@@ -782,4 +782,372 @@ hr.mb-4 {
     width: auto;
     height: 80px;
   }
+}
+
+.profile-card {
+  background-color: #eee;
+  border-radius: 15px;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-pic img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.btn-warning {
+  background-color: #f7941e !important;
+  border: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.btn-warning:hover {
+  background-color: #e48314 !important;
+}
+
+
+
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-label {
+  color: #333;
+}
+
+#eliminarFoto {
+  cursor: pointer; 
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+
+/* === THEME (CLARO/OSCURO) === */
+:root {
+  color-scheme: light;
+
+  /* COLORES BASE */
+  --bg: #ffffff;
+  --fg: #121417;
+  --muted: #6b7280;
+  --surface: #f7f8fa;       /* leve gris de fondo */
+  --surface-2: #ffffff;     /* tarjetas blancas */
+  --border: #e5e7eb;
+  --primary: #f5c542;       /* dorado cálido del modo claro */
+  --navbar-bg: #2b2d31;     /* navbar gris oscuro (modo claro) */
+  --footer-bg: #1b1e25;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* COLORES BASE OSCUROS */
+  --bg: #1e1e1e;            /* fondo principal */
+  --fg: #e0e0e0;            /* texto general */
+  --muted: #a3a3a3;
+  --surface: #2a2a2a;        /* fondos secundarios */
+  --surface-2: #2f3136;      /* tarjetas */
+  --border: #3a3a3a;
+  --primary: #f5c542;        /* dorado consistente */
+  --navbar-bg: #2b2d31;
+  --footer-bg: #2b2d31;
+}
+
+/* Detectar modo oscuro del sistema si no se elige manualmente */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) { color-scheme: dark; }
+}
+
+/* === APLICACIÓN GENERAL === */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.text-muted, .small, small {
+  color: var(--muted) !important;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--navbar-bg) !important;
+  color: var(--fg) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar a {
+  color: #fff !important;
+}
+
+.navbar a:hover {
+  color: var(--primary) !important;
+}
+
+/* FOOTER */
+footer {
+  background: var(--footer-bg) !important;
+  color: var(--fg);
+}
+
+/* TARJETAS Y COMPONENTES */
+.card,
+.list-group-item,
+.modal-content,
+.dropdown-menu {
+  background: var(--surface-2) !important;
+  color: var(--fg) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.bg-light {
+  background-color: var(--surface) !important;
+  color: var(--fg) !important;
+}
+
+/* FORMULARIOS */
+.form-control,
+.form-select,
+.input-group-text,
+.form-control:disabled {
+  background: var(--surface-2);
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 .2rem rgba(245,197,66,.25);
+}
+
+/* BOTONES */
+.btn-primary {
+  background: var(--primary);
+  border: none;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #ffd86b;
+}
+
+.btn-light {
+  background: var(--surface-2);
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.btn-outline-secondary {
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+/* JUMBOTRON / ENCABEZADOS GRANDES */
+.jumbotron {
+  color: var(--fg);
+}
+.jumbotron .container {
+  background-color: rgba(255,255,255,.5);
+}
+html[data-theme="dark"] .jumbotron .container {
+  background-color: rgba(0,0,0,.25);
+}
+
+/* TABLAS, BORDES Y LISTAS */
+.table,
+.border,
+hr,
+.list-group {
+  border-color: var(--border) !important;
+}
+
+/* TOGGLE DE TEMA */
+#theme-toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--fg);
+  border-radius: 10px;
+  padding: .35rem .6rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+#theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
+#theme-toggle .icon {
+  font-style: normal;
+}
+
+
+/* Enlaces de productos */
+.product-link {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.product-link:hover {
+  color: var(--primary);
+}
+
+/* Texto de productos vendidos */
+.sold-count {
+  color: var(--muted);
+}
+
+/* Asegura que textos dentro de .card respeten el tema */
+.card, .card-title, .card-text, h5, p, small {
+  color: var(--fg) !important;
+}
+/* === COMENTARIOS (PRODUCT INFO) === */
+
+#comments-container .border {
+  background: var(--surface-2) !important;
+  border-color: var(--border) !important;
+  color: var(--fg) !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#comments-container strong {
+  color: var(--fg);
+}
+
+#comments-container p {
+  color: var(--fg);
+}
+
+#comments-container .text-muted {
+  color: var(--muted) !important;
+}
+
+/* === ESTRELLAS === */
+
+.filled-star {
+  color: #ff9900;
+}
+
+.empty-star {
+  color: var(--border);
+}
+
+/* === FORMULARIO DE COMENTARIOS === */
+
+#comment-form label,
+#comment-form textarea,
+#comment-form .form-control {
+  color: var(--fg);
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+#comment-form textarea::placeholder {
+  color: var(--muted);
+}
+
+#comment-form button {
+  background: linear-gradient(90deg, var(--primary), #ff7b00);
+  border: none;
+  color: #fff;
+}
+
+#comment-form button:hover {
+  filter: brightness(1.1);
+}
+/* === PERFIL (my-profile.html) === */
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Tarjeta del perfil */
+.profile-card {
+  background-color: var(--surface-2);
+  border: solid var(--border);
+  color: var(--fg);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Contenedor de la foto */
+.profile-pic {
+  background-color: var(--surface);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.profile-pic img {
+
+  object-fit: cover;
+}
+
+/* Texto "Eliminar foto" */
+#eliminarFoto {
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+#eliminarFoto:hover {
+  color: var(--fg);
+}
+
+/* Formularios */
+.form-label {
+  color: var(--fg);
+}
+
+.form-control {
+  background-color: var(--surface-1);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control:disabled {
+  opacity: 0.8;
+}
+
+.btn-warning:hover {
+  filter: brightness(1.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--surface-1);
+  color: var(--muted);
+  padding: 1rem 0;
 }
