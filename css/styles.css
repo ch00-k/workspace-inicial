@@ -868,6 +868,27 @@ html[data-theme="dark"] {
   --primary: #f5c542;        /* dorado consistente */
   --navbar-bg: #2b2d31;
   --footer-bg: #2b2d31;
+  body {
+    background: var(--bg);
+    color: #2b2d31
+  }
+  .login-box
+  {
+    background: #8C8C8C!important;
+
+  }
+  .login-text
+  {
+    color: #2b2d31!important;
+
+  }
+  .login-parametros
+  {
+    background: #282828!important;
+    color: #dad3d3!important;
+
+  }
+  
 }
 
 /* Detectar modo oscuro del sistema si no se elige manualmente */
@@ -1150,4 +1171,30 @@ footer {
   background-color: var(--surface-1);
   color: var(--muted);
   padding: 1rem 0;
+
+}
+.logo-light {
+  width: 997px;           
+  height: auto;
+  display: block;
+  margin: 0 auto; 
+             
+}
+.logo-dark {
+  width: 900px;           
+  height: auto;
+  display: block;
+  margin: 0 auto;  
+ 
+}
+.logo-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .logo-light {
+  display: none;
+}
+
+html[data-theme="dark"] .logo-dark {
+  display: inline;
 }
