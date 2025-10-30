@@ -1198,3 +1198,9 @@ html[data-theme="dark"] .logo-light {
 html[data-theme="dark"] .logo-dark {
   display: inline;
 }
+
+html[data-theme="dark"] .jumbotron {
+  background: url('../img/cover_back-dark.png') no-repeat center center;
+  background-size: cover;
+  background-color: var(--border);
+}
