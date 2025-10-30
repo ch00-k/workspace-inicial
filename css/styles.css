@@ -1202,7 +1202,11 @@ html[data-theme="dark"] .logo-dark {
 html[data-theme="dark"] .jumbotron {
   background: url('../img/cover_back-dark.png') no-repeat center center;
   background-size: cover;
-  background-color: var(--border);
+  background-color: var(--bg);
+}
+
+html[data-theme="dark"] .album{
+  background-color: var(--bg) !important;
 }
 
 #cart-container .producto {
@@ -1295,4 +1299,13 @@ html[data-theme="dark"] .jumbotron {
 
 h1,h2,h3,h4,h5,h6 {
   color: var(--fg) !important;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  /* El contenido principal ocupará el espacio disponible */
 }
