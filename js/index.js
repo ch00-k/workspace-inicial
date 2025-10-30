@@ -14,15 +14,4 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-// ---- Logout ----
-document.addEventListener("DOMContentLoaded", function () {
-  const logoutLink = document.getElementById("logoutLink");
-  if (logoutLink) {
-    logoutLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      localStorage.removeItem("usuario");
-      localStorage.removeItem("password");
-      window.location.href = "login.html";
-    });
-  }
-});
+

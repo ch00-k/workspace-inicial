@@ -19,7 +19,7 @@ function renderCarrito() {
     const { nombre, costo, moneda, cantidad, imagen } = producto;
 
     const productoDiv = document.createElement('div');
-    productoDiv.classList.add('producto');
+    productoDiv.classList.add('producto', 'mb-3');
 
     productoDiv.innerHTML = `
       <img src="${imagen}" alt="${nombre}">

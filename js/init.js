@@ -61,7 +61,6 @@ let getJSONData = function(url){
 logincheck();
 });
 
-
 /* === NUEVO: gestor de tema claro/oscuro === */
 (function () {
   const KEY = "theme";                
@@ -98,3 +97,31 @@ logincheck();
     if (btn){ btn.innerHTML = `${current()==="dark" ? "🌙 Oscuro" : "☀️ Claro"}`; }
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const miEnlace = document.getElementById("miEnlace");
+  const menuCuenta = document.getElementById("menuCuenta");
+  const logoutMenu = document.getElementById("logoutMenu");
+
+  // Toggle del menú
+  miEnlace.addEventListener("click", (e) => {
+    e.preventDefault();
+    menuCuenta.classList.toggle("show");
+  });
+
+  // Cerrar el menú al hacer click fuera
+  document.addEventListener("click", (e) => {
+    if (!miEnlace.contains(e.target) && !menuCuenta.contains(e.target)) {
+      menuCuenta.classList.remove("show");
+    }
+  });
+
+  // ---- Logout ----
+  if (logoutMenu) {
+    logoutMenu.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("usuario");
+      localStorage.removeItem("password");
+      window.location.href = "login.html";
+    });
+  }
+});

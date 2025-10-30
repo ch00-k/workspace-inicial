@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mostrarProducto(product);
       mostrarProductosRelacionados(product.relatedProducts);
 
-      // 🛒 Agregar funcionalidad del botón "Comprar"
+      // Agregar funcionalidad del botón "Comprar"
       const buyBtn = document.getElementById("buy-btn");
       if (buyBtn) {
         buyBtn.addEventListener("click", () => comprarProducto(product));
@@ -61,7 +61,7 @@ function mostrarProducto(product) {
 
 
 
-// 🛒 === FUNCIONALIDAD DEL BOTÓN "COMPRAR" ===
+// === FUNCIONALIDAD DEL BOTÓN "COMPRAR" ===
 function comprarProducto(product) {
   // Crear objeto con la información del producto
   const productoCarrito = {
@@ -123,7 +123,7 @@ function mostrarComentarios(comments) {
 }
 
 
-// === Resto del código (estrellas y productos relacionados) ===
+
 function renderStars(score) {
   let stars = "";
   for (let i = 1; i <= 5; i++) {
