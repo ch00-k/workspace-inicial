@@ -30,8 +30,15 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a id="miEnlace" class="nav-link" href="my-profile.html"></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="miEnlace" role="button">
+              Mi cuenta
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" id="menuCuenta">
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item text-danger" href="#" id="logoutMenu">Cerrar sesión</a></li>
+            </ul>
           </li>
           <li class="nav-item ms-lg-2">
             <button id="theme-toggle" type="button" class="btn btn-sm" aria-pressed="false">☀️ Claro</button>

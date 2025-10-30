@@ -1204,14 +1204,16 @@ html[data-theme="dark"] .jumbotron {
   background-size: cover;
   background-color: var(--border);
 }
+
 #cart-container .producto {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: var(--surface-1); /* Cambiado de #fff y var(--bg) */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid var(--border); /* Agregado para mejor contorno */
 }
 
 #cart-container .producto img {
@@ -1226,9 +1228,14 @@ html[data-theme="dark"] .jumbotron {
   flex: 1;
 }
 
+.cantidad-wrapper{
+  color: var(--fg);
+}
+
 .producto-details h5 {
   margin-bottom: 10px;
   font-size: 1.2rem;
+  color: var(--fg);
 }
 
 .producto-details p.price {
@@ -1284,4 +1291,8 @@ html[data-theme="dark"] .jumbotron {
   .total-box {
     width: 100%;
   }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--fg) !important;
 }
