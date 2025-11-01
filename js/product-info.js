@@ -9,10 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(product => {
       mostrarProducto(product);
       mostrarProductosRelacionados(product.relatedProducts);
+
+      // Agregar funcionalidad del botón "Comprar"
+      const buyBtn = document.getElementById("buy-btn");
+      if (buyBtn) {
+        buyBtn.addEventListener("click", () => comprarProducto(product));
+      }
     })
     .catch(error => console.error("Error al cargar producto:", error));
 
-  
   fetch(PRODUCT_INFO_COMMENTS_URL + productId + EXT_TYPE)
     .then(response => response.json())
     .then(comments => {
@@ -20,13 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error al cargar comentarios:", error));
 
-  
   document.getElementById("comment-form").addEventListener("submit", agregarComentario);
 });
 
 
 // Mostrar info del producto
-
 function mostrarProducto(product) {
   document.getElementById("product-name").textContent = product.name;
   document.getElementById("product-category").textContent = "Categoría: " + product.category;
@@ -58,8 +61,40 @@ function mostrarProducto(product) {
 
 
 
-// Mostrar comentarios 
+// === FUNCIONALIDAD DEL BOTÓN "COMPRAR" ===
+function comprarProducto(product) {
+  // Crear objeto con la información del producto
+  const productoCarrito = {
+    nombre: product.name,
+    costo: product.cost,
+    moneda: product.currency,
+    cantidad: 1,
+    imagen: product.images[0],
+    subtotal: product.cost * 1
+  };
 
+  // Obtener carrito actual del localStorage o crear uno nuevo
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  // Verificar si el producto ya está en el carrito
+  const indexExistente = carrito.findIndex(p => p.nombre === productoCarrito.nombre);
+  if (indexExistente !== -1) {
+    carrito[indexExistente].cantidad += 1;
+    carrito[indexExistente].subtotal = carrito[indexExistente].cantidad * carrito[indexExistente].costo;
+  } else {
+    carrito.push(productoCarrito);
+  }
+
+  // Guardar el carrito actualizado
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  // Redirigir al carrito
+  window.location.href = "cart.html";
+}
+
+
+
+// === COMENTARIOS ===
 function mostrarComentarios(comments) {
   const container = document.getElementById("comments-container");
   container.innerHTML = "";
@@ -87,7 +122,8 @@ function mostrarComentarios(comments) {
   });
 }
 
-// Renderizar estrellas fijas con Font Awesome
+
+
 function renderStars(score) {
   let stars = "";
   for (let i = 1; i <= 5; i++) {
@@ -96,15 +132,12 @@ function renderStars(score) {
   return stars;
 }
 
-// Estrellas interactivas 
-
 let selectedScore = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
   const starsContainer = document.getElementById("star-rating");
   if (!starsContainer) return;
 
-  // Crear 5 estrellas clicables
   for (let i = 1; i <= 5; i++) {
     const star = document.createElement("i");
     star.classList.add("fa", "fa-star", "interactive-star");
@@ -120,25 +153,17 @@ document.addEventListener("DOMContentLoaded", () => {
     starsContainer.appendChild(star);
   }
 
-
   pintarEstrellas(0);
 });
-
 
 function pintarEstrellas(valor) {
   const stars = document.querySelectorAll("#star-rating .interactive-star");
   stars.forEach(star => {
     const val = parseInt(star.dataset.value);
-    if (val <= valor) {
-      star.style.color = "#ff9900"; 
-    } else {
-      star.style.color = "#ccc"; 
-    }
+    star.style.color = val <= valor ? "#ff9900" : "#ccc";
   });
 }
 
-
-// Agregar nuevo comentario con LocalStorage
 function agregarComentario(e) {
   e.preventDefault();
 
@@ -154,12 +179,10 @@ function agregarComentario(e) {
 
   const nuevoComentario = { user, description: text, score, dateTime };
 
-  // Guardar en LocalStorage
   const storedComments = JSON.parse(localStorage.getItem(`comments_${productId}`)) || [];
   storedComments.push(nuevoComentario);
   localStorage.setItem(`comments_${productId}`, JSON.stringify(storedComments));
 
-  // Mostrar en pantalla
   const container = document.getElementById("comments-container");
   const commentDiv = document.createElement("div");
   commentDiv.classList.add("border", "rounded", "p-3", "mb-3", "shadow-sm", "position-relative");
@@ -173,12 +196,10 @@ function agregarComentario(e) {
   `;
   container.prepend(commentDiv);
 
-  // Limpiar formulario
   document.getElementById("comment-form").reset();
   selectedScore = 0;
   pintarEstrellas(0);
 }
-
 
 
 // Productos relacionados
@@ -199,7 +220,6 @@ function mostrarProductosRelacionados(relatedProducts) {
     `;
 
     card.addEventListener("click", () => {
-      // Navegar al producto relacionado
       window.location.href = `product-info.html?id=${prod.id}`;
     });
 
