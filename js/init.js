@@ -125,3 +125,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const badge = document.getElementById("cart-count");
+
+  // Obtener carrito desde localStorage
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  // Calcular cantidad total sumando las cantidades de cada producto
+  const totalProductos = carrito.reduce((total, producto) => total + Number(producto.cantidad || 0), 0);
+
+  // Mostrar u ocultar el badge
+  if (totalProductos > 0) {
+    badge.textContent = totalProductos;
+    badge.style.display = "inline-block";
+  } else {
+    badge.style.display = "none";
+  }
+});
