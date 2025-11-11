@@ -58,7 +58,7 @@
     <div id="cart-container"></div>
 
   
-    <div id="mensaje-vacio" class="alert alert-info text-center my-5" role="alert" style="display:none;">
+    <div id="mensaje-vacio" class="alert-info text-center my-5" role="alert" style="display:none;">
       No hay productos en el carrito.
     </div>
 
@@ -144,21 +144,25 @@
     </div>
   </div>
 
+  <!-- Mensajes de feedback -->
+  <div id="mensaje-compra" class="my-4"></div>
+
+
     <!-- Total y botón de comprar -->
     <div class="d-flex justify-content-center mt-4">
-      <div class="total-box p-4 bg-light rounded shadow-sm text-end">
+      <div class="total-box p-4 bg-light rounded shadow-sm text-end d-flex flex-column" style="width: 300px;">
         <div class="mb-2 d-flex justify-content-between">
           <span>Subtotal:</span>
-          <span id="subtotal">$0</span>
+          <span id="subtotal">USD 0</span>
         </div>
         <div class="mb-2 d-flex justify-content-between">
           <span>Costo de envío:</span>
-          <span id="costo-envio">$0</span>
+          <span id="costo-envio">USD 0</span>
         </div>
         <hr>
         <div class="mb-3 d-flex justify-content-between fw-bold">
           <span>Total:</span>
-          <span id="total">$0</span>
+          <span id="total">UDS 0</span>
         </div>
         <button id="btn-comprar-todos" class="btn btn-primary w-100">Comprar</button>
       </div>
