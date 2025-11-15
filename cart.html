@@ -35,7 +35,12 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end" id="menuCuenta">
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li>
+                  <a class="dropdown-item d-flex align-items-center" href="cart.html">
+                  Mi carrito
+                  <span id="cart-count" class="badge bg-danger ms-2" style="display: none;">0</span>
+                  </a>
+              </li>
               <li><a class="dropdown-item text-danger" href="#" id="logoutMenu">Cerrar sesión</a></li>
             </ul>
           </li>
@@ -53,16 +58,111 @@
     <div id="cart-container"></div>
 
   
-    <div id="mensaje-vacio" class="alert alert-info text-center my-5" role="alert" style="display:none;">
+    <div id="mensaje-vacio" class="alert-info text-center my-5" role="alert" style="display:none;">
       No hay productos en el carrito.
     </div>
 
+  <div class="row g-4">
+
+    <!-- Tipo de envío -->
+    <div class="col-md-6">
+      <h5 class="fw-bold mb-3">Elige tu tipo de envío:</h5>
+      <div class="shipping-box p-3 rounded">
+        <label class="shipping-option d-block mb-3">
+          <input type="radio" name="envio" class="envio" value="0.15">
+          <span><strong>Premium:</strong> Entre 2 a 5 días</span><br>
+          <small>Valor estimado (15%)</small>
+        </label>
+
+        <label class="shipping-option d-block mb-3">
+          <input type="radio" name="envio" class="envio" value="0.07">
+          <span><strong>Express:</strong> Entre 5 a 8 días</span><br>
+          <small>Valor estimado (7%)</small>
+        </label>
+
+        <label class="shipping-option d-block">
+          <input type="radio" name="envio" class="envio" value="0.05">
+          <span><strong>Standard:</strong> Entre 12 a 15 días</span><br>
+          <small>Valor estimado (5%)</small>
+        </label>
+      </div>
+    </div>
+
+    <!-- Dirección de envío -->
+    <div class="col-md-6">
+      <h5 class="fw-bold mb-3">Dirección de envío:</h5>
+      <div class="address-box p-3 rounded">
+        <div class="mb-2">
+          <label for="departamento">Departamento:</label>
+          <input type="text" id="departamento" class="form-control form-control-sm">
+        </div>
+        <div class="mb-2">
+          <label for="localidad">Localidad:</label>
+          <input type="text" id="localidad" class="form-control form-control-sm">
+        </div>
+        <div class="row g-2">
+          <div class="col-md-8">
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" class="form-control form-control-sm">
+          </div>
+          <div class="col-md-4">
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" class="form-control form-control-sm">
+          </div>
+        </div>
+        <div class="mt-2">
+          <label for="esquina">Esquina:</label>
+          <input type="text" id="esquina" class="form-control form-control-sm">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Forma de pago -->
+  <div class="mt-5">
+    <h5 class="fw-bold mb-3">Elige tu forma de pago:</h5>
+    <div class="payment-box d-flex flex-wrap justify-content-between p-3 rounded">
+      <label class="payment-option d-flex align-items-center gap-2">
+        <input type="radio" name="pago" id="tarjeta" value="tarjeta">
+        <span>Tarjeta de crédito</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard" class="payment-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="payment-logo">
+      </label>
+
+      <label class="payment-option d-flex align-items-center gap-2">
+        <input type="radio" name="pago" id="transferencia" value="transferencia">
+        <span>Transferencia bancaria</span>
+        <i class="fa fa-university fs-4"></i>
+      </label>
+
+      <label class="payment-option d-flex align-items-center gap-2">
+        <input type="radio" name="pago" id="paypal" value="paypal">
+        <span>PayPal</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="payment-logo">
+      </label>
+    </div>
+  </div>
+
+  <!-- Mensajes de feedback -->
+  <div id="mensaje-compra" class="my-4"></div>
+
+
     <!-- Total y botón de comprar -->
     <div class="d-flex justify-content-center mt-4">
-      <div class="total-box p-4 bg-light rounded shadow-sm text-end">
-        <div class="mb-3">
-          <span class="fw-bold">Total:</span>
-          <span class="fs-4" id="total">$0</span>
+      <div class="total-box p-4 bg-light rounded shadow-sm text-end d-flex flex-column" style="width: 300px;">
+        <div class="mb-2 d-flex justify-content-between">
+          <span>Subtotal:</span>
+          <span id="subtotal">USD 0</span>
+        </div>
+        <div class="mb-2 d-flex justify-content-between">
+          <span>Costo de envío:</span>
+          <span id="costo-envio">USD 0</span>
+        </div>
+        <hr>
+        <div class="mb-3 d-flex justify-content-between fw-bold">
+          <span>Total:</span>
+          <span id="total">UDS 0</span>
         </div>
         <button id="btn-comprar-todos" class="btn btn-primary w-100">Comprar</button>
       </div>

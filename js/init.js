@@ -125,3 +125,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function actualizarBadgeCarrito() {
+  const badge = document.getElementById("cart-count");
+  if (!badge) return;
+
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const totalProductos = carrito.reduce((total, p) => total + Number(p.cantidad || 0), 0);
+
+  if (totalProductos > 0) {
+    badge.textContent = totalProductos;
+    badge.style.display = "inline-block";
+  } else {
+    badge.style.display = "none";
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarBadgeCarrito();
+});
+
+window.addEventListener("storage", (e) => {
+  if (e.key === "carrito") {
+    actualizarBadgeCarrito();
+  }
+});
