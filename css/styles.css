@@ -1312,10 +1312,12 @@ body {
   border-color: var(--border) !important;
 }
 
-/* === Checkout === */
-.shipping-box, .address-box, .payment-box {
-  border: 1px solid #bbb;
-  background-color: #fff;
+/* === Checkout (Compatible con modo claro/oscuro) === */
+.shipping-box, .address-box, .payment-box, .total-box {
+  background: var(--surface-2) !important;   /* tarjetas */
+  border: 1px solid var(--border) !important;
+  color: var(--fg) !important;
+  transition: background .25s, color .25s;
 }
 
 .shipping-box label,
